@@ -1,0 +1,216 @@
+---
+import CaseStudyStep from "./case-study-step.astro";
+import PhoneMockup from "./phone-mockup.astro";
+---
+
+<!-- TODO REPLACE MOCKUPS WITH ACTUAL SCREENSHOTS & GIFS --><!-- TODO REVIEW & UPDATE THE COPY -->
+<section class="case" id="case">
+  <div class="wrap">
+    <div class="case-head">
+      <p class="chapter">Case study № 1</p>
+      <h2>Chumz: engineering trust into micro-savings</h2>
+      <p>
+        When your users are trusting an app with their savings — sometimes fifty
+        cents at a time — every janky screen is a reason to leave. My job: make
+        the mobile experience feel worthy of that trust. Scroll through the
+        story; the phone follows along.
+      </p>
+    </div>
+
+    <div class="scrolly">
+      <div class="steps">
+        <CaseStudyStep
+          num="01 / The context"
+          screenId="s1"
+          heading="A savings app for everyone — including a $0.05 deposit"
+        >
+          <p>
+            Chumz lets people save toward personal or group goals through mobile
+            money. That means our real users are on <b
+              >every kind of Android device, on every kind of network</b
+            >. Designing for the newest iPhone would be designing for almost
+            nobody.
+          </p>
+          <p>
+            When I joined in January 2023 the product had traction — about
+            30,000 users — and a long list of rough edges standing between it
+            and the next order of magnitude.
+          </p>
+        </CaseStudyStep>
+
+        <CaseStudyStep
+          num="02 / My role"
+          screenId="s2"
+          heading="Owning the mobile experience end-to-end"
+        >
+          <p>
+            I develop, design and prototype the mobile interfaces — and work
+            with our lead engineer on
+            <b>code reviews, roadmaps and feature prioritisation</b>. I also
+            mentor every junior and intern who joins, through pair and mob
+            programming.
+          </p>
+          <p>
+            <b>Remodelling core user flows</b> was the heart of it: redesigning, reassembling
+            and reintegrating the journeys people take most, and resolving critical
+            bugs before users could feel them.
+          </p>
+          <p class="todo">
+            → Add here: one flow you're proudest of, with a before/after screen
+            pair or a 30-second recording.
+          </p>
+        </CaseStudyStep>
+
+        <CaseStudyStep
+          num="03 / The unglamorous win"
+          screenId="s3"
+          heading="A dashboard that gave the support team superpowers"
+        >
+          <p>
+            Growth creates tickets. I designed and built a <b
+              >tailored customer-success dashboard</b
+            > that pulled a scattered, multi-tool process into one screen — so the
+            team could see, triage and resolve issues dramatically faster.
+          </p>
+          <p>
+            Internal tools rarely make portfolios. They should: they're where
+            you learn to build for users who sit three desks away and tell you
+            exactly what's wrong.
+          </p>
+          <p class="todo">
+            → Add here: rough numbers — tickets/week handled, or resolution time
+            before vs after.
+          </p>
+        </CaseStudyStep>
+
+        <CaseStudyStep
+          num="04 / The result"
+          screenId="s4"
+          heading="16.7× growth, and features that move real money"
+        >
+          <p>
+            The product grew from <b>30,000 users to over 500,000</b> during my tenure,
+            and features I shipped contributed to a significant increase in assets
+            under management — people saving more, more often.
+          </p>
+          <div class="metric-row">
+            <div class="metric"><b>500K+</b><span>users today</span></div>
+            <div class="metric">
+              <b>16.7×</b><span>growth since Jan '23</span>
+            </div>
+            <div class="metric"><b>$0.05</b><span>smallest deposit</span></div>
+          </div>
+          <p class="todo">
+            → Add here: a testimonial from your lead engineer or founder — one
+            sentence is enough.
+          </p>
+        </CaseStudyStep>
+      </div>
+
+      <PhoneMockup />
+    </div>
+  </div>
+</section>
+
+<style>
+  .case {
+    padding: 90px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .case-head {
+    margin-bottom: 64px;
+    max-width: 62ch;
+  }
+  h2 {
+    margin-bottom: 18px;
+  }
+  .case-head p {
+    color: var(--color-text-muted);
+    font-size: 18px;
+  }
+
+  .scrolly {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 64px;
+    align-items: start;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Slotted step body content is authored here (not in case-study-step.astro),
+     so these rules must live in this component's scope to apply to it. */
+  .step p {
+    color: var(--color-text-muted);
+    font-size: 16.5px;
+    max-width: 52ch;
+    margin-bottom: 12px;
+  }
+  .step p b {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  .metric-row {
+    display: flex;
+    gap: 28px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+  .metric b {
+    display: block;
+    font-size: 34px;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+  .metric span {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--color-text-muted);
+  }
+  .todo {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--color-accent-secondary);
+    /* TODO SHOULD BE IN GLOBAL.CSS */
+    border: 1px dashed rgba(157, 151, 255, 0.4);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 16px;
+    max-width: 52ch;
+  }
+
+  @media (max-width: 940px) {
+    .scrolly {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const steps = document.querySelectorAll<HTMLElement>(".step");
+  const screens = document.querySelectorAll<HTMLElement>(".screen");
+
+  function activate(id: string, stepEl: Element) {
+    steps.forEach((s) => s.classList.toggle("active", s === stepEl));
+    screens.forEach((sc) => sc.classList.toggle("on", sc.id === id));
+  }
+
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const screenId = entry.target.getAttribute("data-screen");
+          if (screenId) activate(screenId, entry.target);
+        }
+      });
+    },
+    { threshold: 0.55 },
+  );
+  steps.forEach((s) => obs.observe(s));
+</script>

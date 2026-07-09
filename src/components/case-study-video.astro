@@ -1,0 +1,41 @@
+---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src: string;
+  poster: ImageMetadata;
+  posterAlt: string;
+  width: number;
+  height: number;
+  class?: string;
+}
+
+const { src, poster, posterAlt, width, height, class: className } = Astro.props;
+const optimizedPoster = await getImage({ src: poster, width, height, format: 'webp' });
+---
+
+<video
+  class={className}
+  width={width}
+  height={height}
+  muted
+  autoplay
+  loop
+  playsinline
+  preload="none"
+  poster={optimizedPoster.src}
+  aria-label={posterAlt}
+>
+  <source src={src} type="video/mp4" />
+</video>
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    document.querySelectorAll<HTMLVideoElement>('video[autoplay]').forEach((video) => {
+      video.removeAttribute('autoplay');
+      video.pause();
+    });
+  }
+</script>
