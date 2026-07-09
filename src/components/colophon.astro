@@ -1,0 +1,120 @@
+---
+import NairobiClock from "./nairobi-clock.astro";
+---
+
+<section class="colophon" id="colophon">
+  <div class="wrap colo-grid">
+    <div>
+      <p class="chapter">Colophon</p>
+      <h2>About me, briefly</h2>
+      <p style="margin-top:18px">
+        <b>I engage with the whole life cycle</b> — brainstorming, prototyping, building,
+        refining — and I do my best work in cross-functional teams where ideas move
+        freely.
+      </p>
+      <p>
+        Before software, I facilitated ten-week public-health programs with the
+        Kenya Red Cross for over a hundred young adults. Explaining complex
+        things simply, to any audience, turned out to be the most transferable
+        skill I own.
+      </p>
+      <p>
+        Fintech sharpened it into a principle: <b
+          >when people trust you with their savings, "mostly works" is not a
+          standard.</b
+        >
+      </p>
+    </div>
+    <dl class="spec">
+      <dt>Languages</dt>
+      <dd>TypeScript · JavaScript · Python · Dart · Kotlin</dd>
+      <dt>Frontend</dt>
+      <dd>
+        React · React Native · Next.js · Flutter · Svelte · Astro · Angular
+      </dd>
+      <dt>State &amp; data</dt>
+      <dd>Django · Firebase · Supabase · Zustand · Redux · TanStack Query</dd>
+      <dt>Education</dt>
+      <dd>BSc, Machakos University · 2020</dd>
+      <dt>Base</dt>
+      <dd>Nairobi, Kenya · UTC+3 · <NairobiClock /> local</dd>
+      <dt>This site</dt>
+      <dd>Bespoke, naturally. I wouldn't hand you anything less.</dd>
+    </dl>
+  </div>
+
+  <blockquote class="pull-quote wrap">
+    <p class="pull-label">On the stack question</p>
+    <p>
+      I often get asked: "Do you work with React or Angular? React Native or
+      Flutter?" My honest answer — it doesn't matter. These are tools, and tools
+      can be learned. What can't be faked is the dedication to the end result:
+      an experience your customers love and growth your business can measure.
+      That's what I guarantee, regardless of the stack.
+    </p>
+  </blockquote>
+</section>
+
+<style>
+  .colophon {
+    padding: 84px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .colo-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+  }
+  .colo-grid p {
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+    max-width: 58ch;
+  }
+  .colo-grid p b {
+    color: var(--color-text);
+  }
+  .spec {
+    font-family: var(--mono);
+    font-size: 13.5px;
+  }
+  .spec dt {
+    color: var(--color-accent);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+  .spec dd {
+    margin: 6px 0 0;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 940px) {
+    .colo-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+
+  .pull-quote {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+  }
+  .pull-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-secondary);
+    margin-bottom: 14px;
+  }
+  .pull-quote p:not(.pull-label) {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(20px, 2.6vw, 28px);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    max-width: 50ch;
+  }
+</style>

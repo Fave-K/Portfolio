@@ -1,0 +1,21 @@
+---
+---
+
+<span id="localtime">--:--</span>
+
+<script>
+  const el = document.getElementById('localtime');
+  function tick() {
+    if (!el) return;
+    el.textContent = new Date().toLocaleTimeString('en-KE', {
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZone: 'Africa/Nairobi',
+    });
+  }
+  tick();
+  setInterval(tick, 30000);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') tick();
+  });
+</script>

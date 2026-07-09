@@ -1,0 +1,47 @@
+---
+interface Props {
+  meta: string;
+  title: string;
+  description: string;
+}
+
+const { meta, title, description } = Astro.props;
+---
+
+<div class="s-card">
+  <span class="mono">{meta}</span>
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
+
+<style>
+  .s-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 26px;
+    transition:
+      transform 0.2s,
+      border-color 0.2s;
+  }
+  .s-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+  }
+  .s-card .mono {
+    font-size: 12px;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .s-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .s-card p {
+    font-size: 14.5px;
+    color: var(--color-text-muted);
+  }
+</style>

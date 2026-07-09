@@ -1,0 +1,33 @@
+---
+import WorkCard from "./work-card.astro";
+import { moreWork } from "../data/more-work";
+---
+
+<section class="strip" id="more">
+  <div class="wrap">
+    <p class="chapter">Chapters 2-4 · shorter stories</p>
+    <h2>More work</h2>
+    <div class="strip-grid">
+      {moreWork.map((item) => <WorkCard {...item} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .strip {
+    padding: 84px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 940px) {
+    .strip-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
