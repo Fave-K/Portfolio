@@ -1,0 +1,175 @@
+:root {
+  --color-bg: #1a1e33; /* deep indigo, not black */
+  --color-surface: #232845;
+  --color-surface-highlight: #2e3560;
+  --color-surface-shadow: #1f2440;
+  --color-surface-alt: #191d36;
+  --color-surface-elevated: #262c4d;
+  --color-text: #ededf4; /* main text */
+  --color-text-muted: #a9acc6;
+  --color-accent: #ffb454; /* Nairobi dusk accent */
+  --color-accent-hover: #ffc97e;
+  --color-accent-light: #ffd9a0;
+  --color-accent-dark: #d89a45;
+  --color-accent-secondary: #9d97ff;
+  --color-success: #6fe3a5;
+  --color-border: rgba(237, 237, 244, 0.14);
+  --color-shell-bg: #0e1122;
+  --color-shell-border: #3a4066;
+  --color-shell-notch: #05060f;
+  --radius: 16px;
+  --max: 1080px;
+  --display: 'Sora Variable', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--display);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mono {
+  font-family: var(--mono);
+}
+
+/* subtle star-grain sky */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(1px 1px at 12% 22%, rgba(255, 255, 255, 0.35), transparent 50%),
+    radial-gradient(1px 1px at 78% 12%, rgba(255, 255, 255, 0.28), transparent 50%),
+    radial-gradient(1.5px 1.5px at 55% 38%, rgba(255, 255, 255, 0.22), transparent 50%),
+    radial-gradient(1px 1px at 30% 70%, rgba(255, 255, 255, 0.18), transparent 50%),
+    radial-gradient(1px 1px at 90% 60%, rgba(255, 255, 255, 0.2), transparent 50%);
+  opacity: 0.5;
+}
+
+main,
+nav,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 100px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 10px 18px;
+  transition:
+    transform 0.15s,
+    background 0.15s;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  background: var(--color-accent-hover);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+}
+.btn.ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: transparent;
+}
+.btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent-secondary);
+  outline-offset: 3px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 48px);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+/* Shared "eyebrow" label styles — each used by more than one independent
+   component (kicker: hero + contact-outro; chapter: case-study + more-work +
+   colophon), so they live here rather than being duplicated per-component. */
+.kicker {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.chapter {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-secondary);
+  margin-bottom: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .step {
+    opacity: 1;
+  }
+}

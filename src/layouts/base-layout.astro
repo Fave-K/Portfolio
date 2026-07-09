@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+import "@fontsource-variable/sora/index.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import "@fontsource/jetbrains-mono/700.css";
+
+import Toast from "../components/toast.astro";
+import { site } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  ogImage?: string;
+  ogType?: "website" | "article";
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  ogImage,
+  ogType = "website",
+} = Astro.props;
+
+const canonicalURL = new URL(canonicalPath, Astro.site);
+const ogImageURL = ogImage
+  ? new URL(ogImage, Astro.site).toString()
+  : undefined;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.jobTitle,
+  email: `mailto:${site.email}`,
+  url: site.url,
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- TODO ADD ASSETS TO PUBLIC FOLDER -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {ogImageURL && <meta property="og:image" content={ogImageURL} />}
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(personSchema)}
+      is:inline
+    />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <slot />
+    <Toast />
+  </body>
+</html>

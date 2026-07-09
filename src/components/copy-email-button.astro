@@ -1,0 +1,24 @@
+---
+interface Props {
+  email: string;
+  label?: string;
+  variant?: 'nav' | 'contact';
+}
+
+const { email, label = 'Copy email', variant = 'nav' } = Astro.props;
+const className = variant === 'contact' ? 'btn ghost' : 'btn';
+---
+
+<button type="button" class={className} data-copy-email={email}>{label}</button>
+
+<script>
+  document.addEventListener('click', (event) => {
+    const target = (event.target as HTMLElement)?.closest<HTMLElement>('[data-copy-email]');
+    if (!target) return;
+    const email = target.dataset.copyEmail;
+    if (!email) return;
+    navigator.clipboard.writeText(email).then(() => {
+      window.dispatchEvent(new CustomEvent('app:toast'));
+    });
+  });
+</script>
