@@ -1,0 +1,104 @@
+---
+import BalanceCard from "./balance-card.astro";
+import { site } from "../data/site";
+---
+
+<header>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">
+        <span class="dot"></span>Software engineer · Nairobi · Remote-ready
+        (UTC+3)
+      </p>
+      <h1>
+        I build mobile money products that people trust with <em
+          >their savings.</em
+        >
+      </h1>
+      <p class="standfirst">
+        Frontend &amp; mobile engineer specialising in <b
+          >React, React Native and Flutter</b
+        >. For the last three years I've been shipping the fintech app behind
+        one of Kenya's fastest-growing micro-savings platforms.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href={`mailto:${site.email}`}>Get in touch</a>
+        <a class="btn ghost" href="#case">Read the case study</a>
+      </div>
+      <p class="hero-note">
+        // currently: Software Engineer @ Chumz — open to remote contracts &amp;
+        roles
+      </p>
+    </div>
+
+    <BalanceCard />
+  </div>
+</header>
+
+<style>
+  header {
+    padding: 84px 0 76px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .kicker .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+  h1 {
+    margin-bottom: 24px;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--color-accent);
+  }
+  .standfirst {
+    font-size: 18.5px;
+    color: var(--color-text-muted);
+    max-width: 52ch;
+    margin-bottom: 32px;
+  }
+  .standfirst b {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hero-note {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-top: 26px;
+  }
+
+  @media (max-width: 940px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
+    header {
+      padding: 64px 0 60px;
+    }
+  }
+</style>
