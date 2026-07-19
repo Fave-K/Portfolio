@@ -88,6 +88,14 @@ const personSchema = {
       set:html={JSON.stringify(personSchema)}
       is:inline
     />
+    {import.meta.env.PROD && (
+      <script
+        data-goatcounter={import.meta.env.PUBLIC_GOATCOUNTER_URL}
+        async
+        src="//gc.zgo.at/count.js"
+        is:inline
+      />
+    )}
     <meta name="generator" content={Astro.generator} />
   </head>
   <body>
