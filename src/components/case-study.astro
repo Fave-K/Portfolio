@@ -128,7 +128,7 @@ import PhoneMockup from "./phone-mockup.astro";
   }
   .case-head p {
     color: var(--color-text-muted);
-    font-size: 18px;
+    font-size: var(--font-size-lg);
   }
 
   .scrolly {
@@ -147,7 +147,7 @@ import PhoneMockup from "./phone-mockup.astro";
      so these rules must live in this component's scope to apply to it. */
   .step p {
     color: var(--color-text-muted);
-    font-size: 16.5px;
+    font-size: var(--font-size-md-lg);
     max-width: 52ch;
     margin-bottom: 20px;
   }
@@ -163,7 +163,7 @@ import PhoneMockup from "./phone-mockup.astro";
   }
   .metric b {
     display: block;
-    font-size: 34px;
+    font-size: var(--font-size-2xl);
     font-weight: 750;
     letter-spacing: -0.02em;
     color: var(--color-accent);
@@ -172,16 +172,15 @@ import PhoneMockup from "./phone-mockup.astro";
   }
   .metric span {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: var(--font-size-2xs);
     color: var(--color-text-muted);
   }
   .todo {
     font-family: var(--mono);
-    font-size: 12.5px;
+    font-size: var(--font-size-2xs);
     color: var(--color-accent-secondary);
-    /* TODO SHOULD BE IN GLOBAL.CSS */
-    border: 1px dashed rgba(157, 151, 255, 0.4);
-    border-radius: 10px;
+    border: 1px dashed var(--color-accent-secondary-border);
+    border-radius: var(--radius-md);
     padding: 10px 14px;
     margin-top: 16px;
     max-width: 55ch;

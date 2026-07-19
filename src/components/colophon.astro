@@ -75,11 +75,11 @@ import NairobiClock from "./nairobi-clock.astro";
   }
   .spec {
     font-family: var(--mono);
-    font-size: 13.5px;
+    font-size: var(--font-size-xs);
   }
   .spec dt {
     color: var(--color-accent);
-    font-size: 11px;
+    font-size: var(--font-size-3xs);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-top: 18px;
@@ -103,7 +103,7 @@ import NairobiClock from "./nairobi-clock.astro";
   }
   .pull-label {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: var(--font-size-3xs);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-accent-secondary);
@@ -112,7 +112,7 @@ import NairobiClock from "./nairobi-clock.astro";
   .pull-quote p:not(.pull-label) {
     font-family: var(--display);
     font-weight: 600;
-    font-size: clamp(20px, 2.6vw, 28px);
+    font-size: var(--font-size-quote);
     line-height: 1.4;
     letter-spacing: -0.01em;
     max-width: 50ch;

@@ -39,12 +39,12 @@ import PhoneScreenGrowth from './case-study/phone-screen-growth.astro';
   .phone {
     width: 300px;
     height: 620px;
-    border-radius: 44px;
+    border-radius: var(--radius-xl);
     background: var(--color-shell-bg);
     border: 6px solid var(--color-shell-border);
     box-shadow:
-      0 40px 90px -30px rgba(0, 0, 0, 0.7),
-      inset 0 0 0 2px rgba(255, 255, 255, 0.04);
+      0 40px 90px -30px var(--color-shadow-medium),
+      inset 0 0 0 2px var(--color-highlight);
     position: relative;
     overflow: hidden;
   }

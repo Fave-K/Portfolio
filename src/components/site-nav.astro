@@ -5,7 +5,7 @@ import { site } from "../data/site";
 
 <nav>
   <div class="nav-in">
-    <a class="logo" href="#top">Favour Karani <b>/</b> Nairobi</a>
+    <a class="logo" href="/">Favour Karani <b>/</b> Nairobi</a>
     <button
       type="button"
       class="nav-toggle"
@@ -34,8 +34,8 @@ import { site } from "../data/site";
   nav {
     position: sticky;
     top: 0;
-    z-index: 60;
-    background: rgba(26, 30, 51, 0.8);
+    z-index: var(--z-nav);
+    background: var(--color-backdrop);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
   }
@@ -50,7 +50,7 @@ import { site } from "../data/site";
   }
   .logo {
     font-family: var(--mono);
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     text-decoration: none;
   }
   .logo b {
@@ -62,7 +62,7 @@ import { site } from "../data/site";
     align-items: center;
   }
   .nav-r-inner a {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     color: var(--color-text-muted);
     text-decoration: none;
   }
@@ -87,7 +87,7 @@ import { site } from "../data/site";
     width: 100%;
     height: 2px;
     background: var(--color-text);
-    border-radius: 2px;
+    border-radius: var(--radius-xs);
     transition:
       transform 0.2s,
       opacity 0.2s;
@@ -113,7 +113,7 @@ import { site } from "../data/site";
       right: 0;
       display: grid;
       grid-template-rows: 0fr;
-      background: rgba(26, 30, 51, 0.97);
+      background: var(--color-backdrop-strong);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid transparent;
       transition:
