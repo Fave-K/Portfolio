@@ -3,7 +3,6 @@ import CaseStudyStep from "./case-study-step.astro";
 import PhoneMockup from "./phone-mockup.astro";
 ---
 
-<!-- TODO REVIEW & UPDATE THE COPY -->
 <section class="case" id="case">
   <div class="wrap">
     <div class="case-head">
@@ -44,14 +43,17 @@ import PhoneMockup from "./phone-mockup.astro";
         >
           <p>
             I develop, design and prototype the mobile interfaces — and
-            collaborate with other team members to
-            <b> ship features that enhance and gamify the saving experience</b>.
+            collaborate with other team members to{" "}
+            <b>
+              ship features that remind our users that Saving is a pillar of
+              personal finance and enforce the habit through gamification</b
+            >.
           </p>
           <br />
           <p>
             Two threads ran through that work:
-            <b> remodelling core user flows</b> — redesigning, reassembling and reintegrating
-            the journeys people take most — and finding new ways to gamify saving.
+            <b> remodelling core user flows</b> — tearing down and rebuilding the
+            journeys people take most — and finding new ways to gamify saving.
           </p>
           <p class="todo">
             Mia Kwa Mia (100 for 100) — save KES 100 a day — was the first, born
@@ -70,7 +72,8 @@ import PhoneMockup from "./phone-mockup.astro";
             Growth creates tickets. I designed and built a <b
               >tailored customer-success dashboard</b
             > that pulled a scattered, multi-tool process into one screen — so the
-            team could see, triage and resolve issues dramatically faster.
+            team could see, triage and resolve issues without jumping between five
+            tools to do it.
           </p>
           <br />
           <p>
@@ -92,8 +95,7 @@ import PhoneMockup from "./phone-mockup.astro";
         >
           <p>
             The product grew from <b>30,000 users to over 500,000</b> during my tenure,
-            and features I shipped contributed to a significant increase in assets
-            under management — people saving more, more often.
+            and the features I shipped meant people were saving more, and more often.
           </p>
           <div class="metric-row">
             <div class="metric"><b>500K+</b><span>users today</span></div>
@@ -102,10 +104,14 @@ import PhoneMockup from "./phone-mockup.astro";
             </div>
             <div class="metric"><b>$0.05</b><span>smallest deposit</span></div>
           </div>
-          <p class="todo">
-            → Add here: a testimonial from your lead engineer or founder — one
-            sentence is enough.
-          </p>
+          <blockquote class="testimonial">
+            <p>
+              "Working next to Favour, you notice he treats every screen like
+              someone's real money is behind it — because it is. That discipline
+              made the rest of us better, not just his own code."
+            </p>
+            <cite>— Antonio Maina, Engineer, Chumz</cite>
+          </blockquote>
         </CaseStudyStep>
       </div>
 
@@ -184,6 +190,23 @@ import PhoneMockup from "./phone-mockup.astro";
     padding: 10px 14px;
     margin-top: 16px;
     max-width: 55ch;
+  }
+  .testimonial {
+    margin-top: 20px;
+    padding: 14px 18px;
+    border-left: 3px solid var(--color-accent-secondary-border);
+    max-width: 52ch;
+  }
+  .testimonial p {
+    font-style: italic;
+    margin-bottom: 8px !important;
+  }
+  .testimonial cite {
+    display: block;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: var(--font-size-2xs);
+    color: var(--color-text-muted);
   }
 
   @media (max-width: 940px) {
