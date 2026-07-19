@@ -14,9 +14,18 @@ import { site } from "../data/site";
     <div class="outro-row">
       <a class="btn" href={`mailto:${site.email}`}>{site.email}</a>
       <CopyEmailButton email={site.email} variant="contact" />
-      <!-- TODO: real GitHub/LinkedIn URLs -->
-      <a class="btn ghost" href="#" rel="noopener">GitHub ↗</a>
-      <a class="btn ghost" href="#" rel="noopener">LinkedIn ↗</a>
+      <a
+        class="btn ghost"
+        href={site.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer">GitHub<span aria-hidden="true"> ↗</span></a
+      >
+      <a
+        class="btn ghost"
+        href={site.linkedInUrl}
+        target="_blank"
+        rel="noopener noreferrer">LinkedIn<span aria-hidden="true"> ↗</span></a
+      >
     </div>
   </div>
 </section>
