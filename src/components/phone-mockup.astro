@@ -7,7 +7,6 @@ import PhoneScreenGrowth from './case-study/phone-screen-growth.astro';
 
 <div class="phone-wrap" aria-hidden="true">
   <div class="phone">
-    <div class="notch"></div>
     <PhoneScreenHome />
     <PhoneScreenDeposit />
     <PhoneScreenSupport />
@@ -49,21 +48,10 @@ import PhoneScreenGrowth from './case-study/phone-screen-growth.astro';
     position: relative;
     overflow: hidden;
   }
-  .notch {
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 110px;
-    height: 26px;
-    border-radius: 100px;
-    background: var(--color-shell-notch);
-    z-index: 5;
-  }
   .screen {
     position: absolute;
     inset: 0;
-    padding: 56px 20px 22px;
+    padding: 0;
     opacity: 0;
     transition: opacity 0.45s;
     display: flex;
@@ -73,155 +61,18 @@ import PhoneScreenGrowth from './case-study/phone-screen-growth.astro';
   .screen.on {
     opacity: 1;
   }
-  .app-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .app-top .hi {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .app-top .hi span {
-    display: block;
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--color-text-muted);
-  }
-  .avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
-  }
-  .goal-card {
-    background: linear-gradient(150deg, var(--color-surface-highlight), var(--color-surface));
-    border: 1px solid var(--color-border);
-    border-radius: 18px;
-    padding: 18px;
-  }
-  .goal-card .lbl {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-  }
-  .goal-card .amt {
-    font-size: 26px;
-    font-weight: 750;
-    letter-spacing: -0.02em;
-    margin: 6px 0 10px;
-  }
-  .bar {
-    height: 8px;
-    border-radius: 100px;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-  }
-  .bar i {
-    display: block;
+  .screenshot-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    width: 68%;
-    border-radius: 100px;
-    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
-  .goal-card .sub {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    color: var(--color-text-muted);
-    margin-top: 8px;
-  }
-  .chip-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .chip {
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 7px 12px;
-    border-radius: 100px;
-    border: 1px solid var(--color-border);
-    color: var(--color-text-muted);
-  }
-  .chip.hot {
-    background: var(--color-accent);
-    color: var(--color-bg);
-    border-color: var(--color-accent);
-    font-weight: 700;
-  }
-  .sheet {
-    margin-top: auto;
-    background: var(--color-surface-alt);
-    border: 1px solid var(--color-border);
-    border-radius: 20px 20px 26px 26px;
-    padding: 16px;
-  }
-  .sheet .lbl {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin-bottom: 8px;
-  }
-  .keypad {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-  }
-  .key {
-    text-align: center;
-    padding: 9px 0;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    font-family: var(--mono);
-    font-size: 13px;
-  }
-  .cta {
-    margin-top: 10px;
-    text-align: center;
-    background: var(--color-accent);
-    color: var(--color-bg);
-    font-weight: 700;
-    border-radius: 12px;
-    padding: 11px;
-    font-size: 14px;
-  }
-  .growth-svg {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  .tickline {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    color: var(--color-text-muted);
-    display: flex;
-    justify-content: space-between;
-  }
-  .dash-rows {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .ticket {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: 10px 12px;
-    font-family: var(--mono);
-    font-size: 11px;
-  }
-  .ticket .ok {
-    color: var(--color-success);
-  }
-  .ticket .warn {
-    color: var(--color-accent);
+  .screenshot-img--contain {
+    object-fit: contain;
+    object-position: center center;
   }
 
   @media (max-width: 940px) {
@@ -230,7 +81,6 @@ import PhoneScreenGrowth from './case-study/phone-screen-growth.astro';
       height: 560px;
     }
     .screen {
-      position: relative;
       display: none;
     }
     .screen.on {

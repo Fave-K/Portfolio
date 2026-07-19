@@ -1,24 +1,16 @@
 ---
+import AppScreenshot from '../app-screenshot.astro';
+import s2Image from '../../assets/case-study/chumz-savings-challenge-timeline-screen.png';
 ---
 
 <div class="screen" id="s2">
-  <div class="app-top">
-    <div class="hi">Quick save <span>to: New laptop</span></div>
-    <div class="avatar"></div>
-  </div>
-  <div class="goal-card">
-    <div class="lbl">Amount</div>
-    <div class="amt">KES 50</div>
-    <div class="sub">≈ $0.38 · via mobile money</div>
-  </div>
-  <div class="sheet">
-    <div class="lbl">Enter amount</div>
-    <div class="keypad">
-      <div class="key">1</div><div class="key">2</div><div class="key">3</div>
-      <div class="key">4</div><div class="key">5</div><div class="key">6</div>
-      <div class="key">7</div><div class="key">8</div><div class="key">9</div>
-      <div class="key">.</div><div class="key">0</div><div class="key">⌫</div>
-    </div>
-    <div class="cta">Save KES 50 →</div>
-  </div>
+  <AppScreenshot
+    src={s2Image}
+    alt="Chumz app Mia Kwa Mia savings challenge timeline showing daily deposit history"
+    width={1206}
+    height={2622}
+    sizes="(max-width: 940px) 270px, 300px"
+    quality={72}
+    class="screenshot-img"
+  />
 </div>

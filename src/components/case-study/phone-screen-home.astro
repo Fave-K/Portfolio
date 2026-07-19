@@ -1,27 +1,17 @@
 ---
+import AppScreenshot from '../app-screenshot.astro';
+import s1Image from '../../assets/case-study/chumz-goals-quick-save-screen.png';
 ---
 
 <div class="screen on" id="s1">
-  <div class="app-top">
-    <div class="hi">Habari, Wanjiru <span>Tuesday · saving day</span></div>
-    <div class="avatar"></div>
-  </div>
-  <div class="goal-card">
-    <div class="lbl">Goal · New laptop</div>
-    <div class="amt">KES 34,200</div>
-    <div class="bar"><i></i></div>
-    <div class="sub">68% of KES 50,000 · 41 deposits</div>
-  </div>
-  <div class="chip-row">
-    <span class="chip hot">Save now</span>
-    <span class="chip">Group goals</span>
-    <span class="chip">History</span>
-  </div>
-  <div class="sheet">
-    <div class="lbl">Streak</div>
-    <div class="tickline">
-      <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
-    </div>
-    <div class="bar" style="margin-top:8px"><i style="width:85%"></i></div>
-  </div>
+  <AppScreenshot
+    src={s1Image}
+    alt="Chumz app Goals screen showing the Quick Save balance and a list of personal savings goals"
+    width={1206}
+    height={2622}
+    sizes="(max-width: 940px) 270px, 300px"
+    quality={72}
+    priority
+    class="screenshot-img"
+  />
 </div>
