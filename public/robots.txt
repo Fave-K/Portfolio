@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://favourkarani.com/sitemap-index.xml
+Sitemap: https://www.favourkarani.com/sitemap-index.xml

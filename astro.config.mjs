@@ -5,7 +5,7 @@ import { FontaineTransform } from 'fontaine';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://favourkarani.com',
+  site: 'https://www.favourkarani.com',
   integrations: [sitemap()],
   vite: {
     plugins: [
