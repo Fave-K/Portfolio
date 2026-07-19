@@ -1,46 +1,52 @@
 # Portfolio
-Personal portfolio website
 
-# Astro Starter Kit: Minimal
+Favour Karani's personal portfolio — a single-page site built around a deep-dive
+case study of Chumz, a micro-savings app grown from 30,000 to over 500,000 users.
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+## 🧰 Tech stack
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Astro 7](https://astro.build) — static site, no client-side UI framework
+- pnpm — package manager
+- [Fontsource](https://fontsource.org) (`Sora` variable + `JetBrains Mono`) with
+  [`fontaine`](https://github.com/unjs/fontaine) for fallback font metrics
+- `sharp` for image processing
+- `@astrojs/sitemap` for sitemap generation
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Project structure
 
 ```text
 /
-├── public/
+├── public/                    # favicons, robots.txt
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── assets/case-study/     # Chumz case study screenshots
+│   ├── components/            # hero, case-study, nav, footer, etc.
+│   │   └── case-study/        # phone-screen sub-components
+│   ├── data/                  # site.ts, more-work.ts
+│   ├── layouts/
+│   │   └── base-layout.astro
+│   ├── pages/
+│   │   └── index.astro        # the only route — single-page site
+│   └── styles/
+│       └── global.css
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+Astro looks for `.astro` or `.md` files in `src/pages/` and exposes each as a
+route based on its file name. Static assets like favicons go in `public/`.
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| Command                | Action                                            |
+| :--------------------- | :------------------------------------------------- |
+| `pnpm install`          | Installs dependencies                              |
+| `pnpm dev`              | Starts local dev server at `localhost:4321`        |
+| `pnpm build`            | Build the production site to `./dist/`             |
+| `pnpm preview`          | Preview the production build locally               |
+| `pnpm astro check`      | Type-check `.astro` files                          |
+| `pnpm astro add <int>`  | Add an Astro integration                           |
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Check the [Astro documentation](https://docs.astro.build).
